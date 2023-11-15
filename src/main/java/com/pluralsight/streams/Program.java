@@ -2,6 +2,7 @@ package com.pluralsight.streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
 
@@ -35,8 +36,37 @@ public class Program {
         peopleList.add(person10);
 
         // Printing information about each person in the list
-        for (Person person : peopleList) {
-            System.out.println("Name: " + person.getFirstName() + " " + person.getLastName() + ", Age: " + person.getAge());
+//        for (Person person : peopleList) {
+//            System.out.println("Name: " + person.getFirstName() + " " + person.getLastName() + ", Age: " + person.getAge());
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("How would you like to search; by first or last name?");
+        System.out.println("Enter [1] for first name or [2] for last name");
+        int input = keyboard.nextInt();
+
+        ArrayList<Person> matchedPeeps = new ArrayList<>();
+
+        if(input == 1){
+
+
+            System.out.println("Enter first name to search: ");
+            String firstName = keyboard.next();
+
+            for(Person person: matchedPeeps){
+
+                System.out.println("");
+
+            }
+        }else if(input ==2){
+            System.out.println("Enter last name to search: ");
+            String lastName = keyboard.next();
+
+
+
+        }
+
+
+
         }
     }
-}
+
