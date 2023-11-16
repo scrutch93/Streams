@@ -59,25 +59,33 @@ public class Program {
 
       //nameSearch();
 
-//        System.out.println("What would you like to do?");
-//        System.out.println("[1] Search by name");
-//        System.out.println("[2] Get average age");
-//        System.out.println("[3] Find the eldest/youngest");
+        System.out.println("What would you like to do?");
+        System.out.println("[1] Search by name");
+        System.out.println("[2] Get average age");
+        System.out.println("[3] Find the eldest/youngest");
 
+        Scanner keyboard = new Scanner(System.in);
+        int input = keyboard.nextInt();
 
+        switch (input){
 
-
-        //getAverage(peopleList);
-        getEldest(peopleList);
-        getYoungest(peopleList);
+            case 1:
+                nameSearch(peopleList);
+                break;
+            case 2:
+                getAverage(peopleList);
+                break;
+            case 3:
+                getEldest(peopleList);
+                getYoungest(peopleList);
+                break;
+        }
 
     }
 
 
-    public static void nameSearch(){
+    public static void nameSearch(List<Person> peopleList){
         Scanner keyboard = new Scanner(System.in);
-        List<Person> peopleList = new ArrayList<>();
-
 
         System.out.println("How would you like to search; by first or last name?");
         System.out.println("Enter [1] for first name or [2] for last name");
@@ -151,7 +159,7 @@ public class Program {
                 //Below is an example of a method reference (Person::getAge)
                 .mapToInt(Person::getAge)
                 .reduce(Integer.MIN_VALUE,Integer::max);
-        System.out.println(eldest);
+                System.out.println(eldest);
 
 
     }
