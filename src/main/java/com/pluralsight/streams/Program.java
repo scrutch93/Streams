@@ -56,31 +56,31 @@ public class Program {
 //
 //            System.out.println("The average age of this group is: " + average);
 
+        while(true) {
+            System.out.println("What would you like to do?");
+            System.out.println("[1] Search by name");
+            System.out.println("[2] Get average age");
+            System.out.println("[3] Find the eldest/youngest");
 
-      //nameSearch();
+            Scanner keyboard = new Scanner(System.in);
+            int input = keyboard.nextInt();
 
-        System.out.println("What would you like to do?");
-        System.out.println("[1] Search by name");
-        System.out.println("[2] Get average age");
-        System.out.println("[3] Find the eldest/youngest");
+            switch (input) {
 
-        Scanner keyboard = new Scanner(System.in);
-        int input = keyboard.nextInt();
-
-        switch (input){
-
-            case 1:
-                nameSearch(peopleList);
-                break;
-            case 2:
-                getAverage(peopleList);
-                break;
-            case 3:
-                getEldest(peopleList);
-                getYoungest(peopleList);
-                break;
+                case 1:
+                    nameSearch(peopleList);
+                    break;
+                case 2:
+                    getAverage(peopleList);
+                    break;
+                case 3:
+                    getEldest(peopleList);
+                    getYoungest(peopleList);
+                    break;
+                default:
+                    System.out.println("That's not an option");
+            }
         }
-
     }
 
 
