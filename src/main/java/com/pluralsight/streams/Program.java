@@ -1,7 +1,10 @@
 package com.pluralsight.streams;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.Scanner;
 
 public class Program {
@@ -54,20 +57,47 @@ public class Program {
 //            System.out.println("The average age of this group is: " + average);
 
 
+      //nameSearch();
+
+
+       OptionalDouble average = peopleList.stream()
+                .mapToInt(person -> person.getAge())
+                .average();
+
+        System.out.println(average);
 
 
 
 
 
 
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void nameSearch(){
         Scanner keyboard = new Scanner(System.in);
+        List<Person> peopleList = new ArrayList<>();
 
 
         System.out.println("How would you like to search; by first or last name?");
         System.out.println("Enter [1] for first name or [2] for last name");
         int input = keyboard.nextInt();
-
-
 
         if(input == 1){
 
@@ -109,10 +139,9 @@ public class Program {
 //            }
 //
 //
-       }
-
-
-
         }
-    }
 
+
+
+    }
+}
