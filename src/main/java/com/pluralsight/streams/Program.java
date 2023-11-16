@@ -59,17 +59,17 @@ public class Program {
 
       //nameSearch();
 
-
-       OptionalDouble average = peopleList.stream()
-                .mapToInt(person -> person.getAge())
-                .average();
-
-        System.out.println(average);
+//        System.out.println("What would you like to do?");
+//        System.out.println("[1] Search by name");
+//        System.out.println("[2] Get average age");
+//        System.out.println("[3] Find the eldest/youngest");
 
 
 
 
-
+        //getAverage(peopleList);
+        getEldest(peopleList);
+        getYoungest(peopleList);
 
     }
 
@@ -141,6 +141,42 @@ public class Program {
 //
         }
 
+
+
+    }
+
+    public static void getAverage(List<Person> peopleList){
+//        List<Person> peopleList = new ArrayList<>();
+
+
+        OptionalDouble average = peopleList.stream()
+
+                //below, you can replace the lambda with Person::getAge
+                .mapToInt(person -> person.getAge())
+                .average();
+
+     System.out.println(average.getAsDouble());
+
+    }
+
+    public static void getEldest(List<Person> peopleList){
+
+
+        int eldest = peopleList.stream()
+                .mapToInt(Person::getAge)
+                .reduce(Integer.MIN_VALUE,Integer::max);
+        System.out.println(eldest);
+
+
+    }
+
+    public static void getYoungest(List<Person> peopleList){
+
+
+        int youngest = peopleList.stream()
+                .mapToInt(person -> person.getAge())
+                .reduce(Integer.MAX_VALUE,Integer::min);
+        System.out.println(youngest);
 
 
     }
