@@ -42,7 +42,27 @@ public class Program {
 //        for (Person person : peopleList) {
 //            System.out.println("Name: " + person.getFirstName() + " " + person.getLastName() + ", Age: " + person.getAge());
 
+        int sum = 0;
+
+        for(Person person: peopleList) {
+            sum += person.getAge();
+        }
+
+            double average = (double) sum /peopleList.size();
+
+
+            System.out.println("The average age of this group is: " + average);
+
+
+
+
+
+
+
+
         Scanner keyboard = new Scanner(System.in);
+
+
         System.out.println("How would you like to search; by first or last name?");
         System.out.println("Enter [1] for first name or [2] for last name");
         int input = keyboard.nextInt();
