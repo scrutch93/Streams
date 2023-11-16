@@ -44,7 +44,7 @@ public class Program {
         System.out.println("Enter [1] for first name or [2] for last name");
         int input = keyboard.nextInt();
 
-        ArrayList<Person> matchedPeeps = new ArrayList<>();
+
 
         if(input == 1){
 
@@ -52,15 +52,25 @@ public class Program {
             System.out.println("Enter first name to search: ");
             String firstName = keyboard.next();
 
-            for(Person person: matchedPeeps){
+            for(Person person: peopleList){
 
-                System.out.println("");
+                if(firstName.equalsIgnoreCase(person.getFirstName())){
+
+                    System.out.println(person);
+                }
 
             }
         }else if(input ==2){
             System.out.println("Enter last name to search: ");
             String lastName = keyboard.next();
 
+            for(Person person: peopleList){
+
+                if(lastName.equalsIgnoreCase(person.getLastName())){
+                    System.out.println(person);
+                }
+
+            }
 
 
         }
