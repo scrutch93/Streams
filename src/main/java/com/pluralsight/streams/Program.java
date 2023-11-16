@@ -19,6 +19,7 @@ public class Program {
         Person person8 = new Person("Daniel", "Taylor", 32);
         Person person9 = new Person("Olivia", "Moore", 27);
         Person person10 = new Person("Michael", "Clark", 38);
+        Person person11 = new Person("Sophia", "Clark", 50);
 
         // Creating a list to store the people
         List<Person> peopleList = new ArrayList<>();
@@ -34,6 +35,8 @@ public class Program {
         peopleList.add(person8);
         peopleList.add(person9);
         peopleList.add(person10);
+        peopleList.add(person11);
+
 
         // Printing information about each person in the list
 //        for (Person person : peopleList) {
