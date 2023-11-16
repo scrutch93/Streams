@@ -74,22 +74,6 @@ public class Program {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static void nameSearch(){
         Scanner keyboard = new Scanner(System.in);
         List<Person> peopleList = new ArrayList<>();
@@ -151,7 +135,7 @@ public class Program {
 
         OptionalDouble average = peopleList.stream()
 
-                //below, you can replace the lambda with Person::getAge
+                //Lambda re
                 .mapToInt(person -> person.getAge())
                 .average();
 
@@ -163,6 +147,8 @@ public class Program {
 
 
         int eldest = peopleList.stream()
+
+                //Below is an example of a method reference (Person::getAge)
                 .mapToInt(Person::getAge)
                 .reduce(Integer.MIN_VALUE,Integer::max);
         System.out.println(eldest);
@@ -174,10 +160,12 @@ public class Program {
 
 
         int youngest = peopleList.stream()
+                //person -> person.getAge()
+//              person is the input parameter.
+//              person.getAge() is the body of the lambda expression, representing the method call to get the age of the person object.
                 .mapToInt(person -> person.getAge())
                 .reduce(Integer.MAX_VALUE,Integer::min);
-        System.out.println(youngest);
-
+                 System.out.println(youngest);
 
     }
 }
