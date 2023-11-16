@@ -42,16 +42,16 @@ public class Program {
 //        for (Person person : peopleList) {
 //            System.out.println("Name: " + person.getFirstName() + " " + person.getLastName() + ", Age: " + person.getAge());
 
-        int sum = 0;
-
-        for(Person person: peopleList) {
-            sum += person.getAge();
-        }
-
-            double average = (double) sum /peopleList.size();
-
-
-            System.out.println("The average age of this group is: " + average);
+//        int sum = 0;
+//
+//        for(Person person: peopleList) {
+//            sum += person.getAge();
+//        }
+//
+//            double average = (double) sum /peopleList.size();
+//
+//
+//            System.out.println("The average age of this group is: " + average);
 
 
 
@@ -75,28 +75,41 @@ public class Program {
             System.out.println("Enter first name to search: ");
             String firstName = keyboard.next();
 
-            for(Person person: peopleList){
+            peopleList.stream()
+                    .filter(person -> person.getFirstName().equalsIgnoreCase(firstName))
+                    .forEach(System.out::println);
 
-                if(firstName.equalsIgnoreCase(person.getFirstName())){
 
-                    System.out.println(person);
-                }
 
-            }
+//            for(Person person: peopleList){
+//
+//                if(firstName.equalsIgnoreCase(person.getFirstName())){
+//
+//                    System.out.println(person);
+//                }
+//
+//            }
         }else if(input ==2){
             System.out.println("Enter last name to search: ");
             String lastName = keyboard.next();
 
-            for(Person person: peopleList){
-
-                if(lastName.equalsIgnoreCase(person.getLastName())){
-                    System.out.println(person);
-                }
-
-            }
+            peopleList.stream()
+                    .filter(person -> person.getLastName().equalsIgnoreCase(lastName))
+                    .forEach(System.out::println);
 
 
-        }
+
+
+//            for(Person person: peopleList){
+//
+//                if(lastName.equalsIgnoreCase(person.getLastName())){
+//                    System.out.println(person);
+//                }
+//
+//            }
+//
+//
+       }
 
 
 
